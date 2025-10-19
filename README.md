@@ -152,3 +152,22 @@ Securing Properties: Ensures that only property owners can modify or delete thei
 Safeguarding Payments: Prevents unauthorized access to financial transactions.
 
 System Integrity: Keeps the API stable, reliable, and resistant to attacks or misuse
+
+CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) is a development practice that automates the process of building, testing, and deploying code. It ensures that every new code change is automatically tested and integrated into the main project, reducing human error and speeding up delivery.
+
+IT'S IMPORTANT FOR THE PROJECT.
+
+Continuous Integration (CI): Automatically tests and validates new code when developers push changes to GitHub. This ensures that the backend APIs, models, and serializers remain functional and error-free.
+
+Continuous Deployment (CD): Once the tests pass, the updated code can be automatically deployed to a staging or production server (like AWS, Render, or Heroku) without manual intervention.
+
+TOOLS THAT CAN BE USED.
+GitHub Actions: Automates testing, building, and deployment workflows directly from your GitHub repository.
+
+Docker: Containers make it easy to package and deploy the Django app consistently across different environments.
+
+Heroku : Platforms for deploying and hosting the Django application.
+
+Pytest: Used for automated testing to ensure new changes don’t break existing features.
