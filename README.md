@@ -61,7 +61,6 @@ A User can make multiple Bookings.
 A User can write multiple Reviews.
 
 2. Property
-
 id: Primary key
 title: Property name or title
 description: Detailed info about the property
@@ -73,7 +72,6 @@ A Property belongs to one User (the host).
 A Property can have multiple Bookings and Reviews.
 
 3. Booking
-
 id: Primary key
 check_in: Date the guest arrives
 check_out: Date the guest leaves
@@ -85,7 +83,6 @@ A Booking belongs to one User (the guest).
 A Booking belongs to one Property.
 
 4. Review
-
 id: Primary key
 rating: Numeric value (e.g. 1–5 stars)
 comment: Review text
@@ -96,7 +93,6 @@ A Review belongs to one User (the guest).
 A Review belongs to one Property.
 
 5. Payment
-
 id: Primary key
 amount: Total payment amount
 payment_method: e.g. “Card”, “Mobile Money”
@@ -106,3 +102,28 @@ status: e.g. “Paid”, “Pending”, “Failed”
 Relationships:
 A Payment belongs to one Booking.
 A Booking can have one Payment.
+
+Feature Breakdown
+1. User Management
+This feature handles user registration, authentication, and profile management for both hosts and guests.
+It ensures secure access, allowing hosts to list properties and guests to make bookings while keeping user data protected.
+
+2. Property Management
+Hosts can add, update, and manage their property listings through this feature.
+It provides functionality for storing property details such as descriptions, prices, and locations — forming the foundation of the booking system.
+
+3. Booking System
+This feature allows guests to reserve available properties for specific dates and track their booking history.
+It ensures that booking data such as check-in, check-out, and total cost are managed efficiently, preventing overlapping reservations.
+
+4. Payment Processing
+The payment system handles all transactions between guests and hosts.
+It securely processes payments, records transaction history, and updates booking statuses based on successful or failed payments.
+
+5. Review System
+After a stay, guests can leave reviews and ratings for properties.
+This builds trust between users, helps future guests make informed decisions, and encourages hosts to maintain quality listings.
+
+6. Data Optimization
+This feature focuses on improving database queries, caching frequently accessed data, and ensuring the application performs efficiently at scale.
+It helps the system handle more users, properties, and bookings without slowing
