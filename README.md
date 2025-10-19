@@ -127,3 +127,28 @@ This builds trust between users, helps future guests make informed decisions, an
 6. Data Optimization
 This feature focuses on improving database queries, caching frequently accessed data, and ensuring the application performs efficiently at scale.
 It helps the system handle more users, properties, and bookings without slowing
+
+API Security.
+1. Authentication
+Authentication ensures that only verified users (hosts or guests) can access protected endpoints.
+The project uses JWT (JSON Web Tokens) or Django’s built-in Token Authentication to verify user identities.
+This prevents unauthorized users from performing actions such as making bookings or viewing sensitive user information.
+
+
+2. Authorization
+Authorization defines what an authenticated user is allowed to do.
+For example, a guest can create bookings and leave reviews, while only a host can add or manage properties.
+This layer of control ensures users only interact with resources they own or are permitted to access, protecting both hosts and guests from data misuse.
+
+3. Rate Limiting
+Rate limiting helps prevent abuse of the API by restricting the number of requests a user or IP address can make within a specific time frame.
+This protects the system from DDoS attacks and excessive traffic that could slow down or crash the application.
+
+Why the Security matters
+Protecting User Data: Prevents leaks of personal information like emails, payment details, and booking history.
+
+Securing Properties: Ensures that only property owners can modify or delete their listings.
+
+Safeguarding Payments: Prevents unauthorized access to financial transactions.
+
+System Integrity: Keeps the API stable, reliable, and resistant to attacks or misuse
