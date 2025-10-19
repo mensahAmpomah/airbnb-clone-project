@@ -43,3 +43,66 @@ Technology Stack
 7. Docker: Containerization tool for consistent development and deployment environments.
 
 8. CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
+
+Database Design Overview
+
+1. User
+Key Fields:
+
+id: Primary key (auto-generated)
+username: The user’s unique login name
+email: The user’s email address
+is_host: Boolean value — True if the user is a property owner, False if a guest
+
+Relationships:
+
+A User can own multiple Properties.
+A User can make multiple Bookings.
+A User can write multiple Reviews.
+
+2. Property
+
+id: Primary key
+title: Property name or title
+description: Detailed info about the property
+location: City or address
+price_per_night: Cost per night
+
+Relationships:
+A Property belongs to one User (the host).
+A Property can have multiple Bookings and Reviews.
+
+3. Booking
+
+id: Primary key
+check_in: Date the guest arrives
+check_out: Date the guest leaves
+total_price: Total cost for the booking
+status: e.g. “Pending”, “Confirmed”, “Cancelled”
+
+Relationships:
+A Booking belongs to one User (the guest).
+A Booking belongs to one Property.
+
+4. Review
+
+id: Primary key
+rating: Numeric value (e.g. 1–5 stars)
+comment: Review text
+created_at: Date/time the review was made
+
+Relationships:
+A Review belongs to one User (the guest).
+A Review belongs to one Property.
+
+5. Payment
+
+id: Primary key
+amount: Total payment amount
+payment_method: e.g. “Card”, “Mobile Money”
+payment_date: Date payment was made
+status: e.g. “Paid”, “Pending”, “Failed”
+
+Relationships:
+A Payment belongs to one Booking.
+A Booking can have one Payment.
